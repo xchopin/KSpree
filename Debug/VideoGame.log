@@ -1,0 +1,6 @@
+﻿  Map.cpp
+  main.cpp
+c:\users\xavier\documents\visual studio 2015\projects\videogame\main.cpp(81): warning C4305: 'argument' : troncation de 'double' à 'float'
+c:\users\xavier\documents\visual studio 2015\projects\videogame\main.cpp(109): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+  Génération de code en cours...
+  VideoGame.vcxproj -> C:\Users\Xavier\Documents\Visual Studio 2015\Projects\VideoGame\Debug\VideoGame.exe

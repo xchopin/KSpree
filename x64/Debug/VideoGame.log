@@ -1,0 +1,7 @@
+﻿  Personnage.cpp
+  main.cpp
+c:\users\xavier\documents\visual studio 2015\projects\videogame\main.cpp(52): warning C4305: 'argument' : troncation de 'double' à 'float'
+  Animation.cpp
+  AnimatedSprite.cpp
+  Génération de code en cours...
+sfml-graphics.lib(sfml-graphics-2.dll) : fatal error LNK1112: type d'ordinateur module 'X86' en conflit avec le type d'ordinateur cible 'x64'
