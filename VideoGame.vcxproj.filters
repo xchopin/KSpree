@@ -2,23 +2,29 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Animation.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
     <ClCompile Include="Personnage.cpp">
-      <Filter>Classes</Filter>
-    </ClCompile>
-    <ClCompile Include="AnimatedSprite.cpp">
-      <Filter>Classes</Filter>
+      <Filter>MVC\Modèle</Filter>
     </ClCompile>
     <ClCompile Include="Map.cpp">
-      <Filter>Classes</Filter>
+      <Filter>MVC\Modèle</Filter>
     </ClCompile>
     <ClCompile Include="Zombie.cpp">
-      <Filter>Classes</Filter>
+      <Filter>MVC\Modèle</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimatedSprite.cpp">
+      <Filter>MVC\Vue</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>MVC\Vue</Filter>
     </ClCompile>
     <ClCompile Include="TileMap.cpp">
-      <Filter>Classes</Filter>
+      <Filter>MVC\Vue</Filter>
+    </ClCompile>
+    <ClCompile Include="Gameplay.cpp">
+      <Filter>MVC\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="moteur.cpp">
+      <Filter>MVC\Controller</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -37,13 +43,25 @@
     <ClInclude Include="Zombie.h">
       <Filter>En-tête</Filter>
     </ClInclude>
+    <ClInclude Include="Gameplay.h">
+      <Filter>En-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="En-tête">
       <UniqueIdentifier>{6c5b6b25-7f31-43ee-9fb7-a515209f6c34}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Classes">
+    <Filter Include="MVC">
       <UniqueIdentifier>{f6e85c52-4879-4ae6-aacd-158026cd9eb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Vue">
+      <UniqueIdentifier>{7d2ed03a-9d9d-4739-ac4f-8f1fd5897144}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Controller">
+      <UniqueIdentifier>{8b72ee0b-ff81-44de-be66-496143b1c148}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MVC\Modèle">
+      <UniqueIdentifier>{6a1af368-5b7a-4e47-bf84-f608b5a1b1cb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
