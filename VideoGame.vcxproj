@@ -160,21 +160,21 @@
   <ItemGroup>
     <ClCompile Include="AnimatedSprite.cpp" />
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Balle.cpp" />
+    <ClCompile Include="HUD.cpp" />
+    <ClCompile Include="Personnage.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Map.cpp" />
     <ClCompile Include="moteur.cpp" />
-    <ClCompile Include="Personnage.cpp" />
+    <ClCompile Include="Joueur.cpp" />
     <ClCompile Include="TileMap.cpp" />
-    <ClCompile Include="Zombie.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.hpp" />
     <ClInclude Include="Animation.hpp" />
     <ClInclude Include="Gameplay.h" />
-    <ClInclude Include="Map.h" />
+    <ClInclude Include="Joueur.h" />
     <ClInclude Include="Personnage.h" />
-    <ClInclude Include="Zombie.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
