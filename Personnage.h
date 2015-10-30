@@ -14,14 +14,16 @@ class Personnage {
 private:
 
 	std::string m_nom;
-	int m_vie;
+	
 	int m_degat;
 	int m_vitesse;
 	int m_x;
 	int m_y;
+	int m_vie;
 
 
 public:
+	
 	Animation m_animationMarcherBas;
 	Animation m_animationMarcherGauche;
 	Animation m_animationMarcherRight;
@@ -36,6 +38,8 @@ public:
 	void updateAnimation(sf::Time frameTime);
 	void perdreVie(int x);
 	void attaquer(Personnage p);
+	void seFaireAttaquer(Personnage p); //Méthode alternative car putain de problème de pointeur ,long à expliquer ici...
+	bool isDead();
 
 	// - - - Getter - - -
 

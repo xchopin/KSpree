@@ -17,6 +17,7 @@ public:
 	const sf::Texture* getSpriteSheet() const;
 	std::size_t getSize() const;
 	const sf::IntRect& getFrame(std::size_t n) const;
+	void effacerFrame();
 
 private:
 	std::vector<sf::IntRect> m_frames;

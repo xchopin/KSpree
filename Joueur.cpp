@@ -16,8 +16,8 @@ void Joueur::jouerAnimation() {
 void Joueur::dessinerHUD(sf::RenderWindow& window, sf::Clock& temps) {
 
 	// Boite
-	sf::RectangleShape boite(sf::Vector2f(window.getSize().x, 30));
-	boite.setPosition(0, window.getSize().y - 30);
+	sf::RectangleShape boite(sf::Vector2f(window.getSize().x, 95));
+	boite.setPosition(0, window.getSize().y - 65);
 	boite.setFillColor(sf::Color(0, 0, 0));
 	window.draw(boite);
 
@@ -26,16 +26,16 @@ void Joueur::dessinerHUD(sf::RenderWindow& window, sf::Clock& temps) {
 	sf::Font font;
 	if (!font.loadFromFile("./assets/arial.ttf")) { std::cout << "Erreur de chargement de la police arial.ttf" << std::endl; }
 	texteVie.setFont(font);
-	texteVie.setCharacterSize(15);
+	texteVie.setCharacterSize(16);
 	texteVie.setColor(sf::Color::White);
 	texteVie.setStyle(sf::Text::Bold);
-	texteVie.setString("VIE: ");
-	texteVie.setPosition(1, window.getSize().y - 30);
+	texteVie.setString("Santé: ");
+	texteVie.setPosition(1, window.getSize().y - 55);
 	window.draw(texteVie);
 
 	// La vie
-	sf::RectangleShape vie(sf::Vector2f( Joueur::getVie() * 2, 8));
-	vie.setPosition(1, window.getSize().y - 10);
+	sf::RectangleShape vie(sf::Vector2f( Joueur::getVie() * 2, 14));
+	vie.setPosition(1, window.getSize().y - 25);
 	vie.setFillColor(sf::Color(255, 0, 0));
 	window.draw(vie);
 

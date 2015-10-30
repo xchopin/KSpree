@@ -15,8 +15,6 @@ public:
 	void clavier(); // Méthode pour déplacer le perso
 	void dessinerHUD(sf::RenderWindow& window, sf::Clock& temps); // pas vraiment le bonne endroit mais #YOLO
 
-
-
 };
 
 #endif

@@ -12,7 +12,7 @@
 
 	void Personnage::chargerTexture(string fichier) {
 		if (!m_texture.loadFromFile(fichier)) { cout << "Erreur lors du chargement de " << fichier << " !" << endl; }
-
+		m_texture.setSmooth(true);
 		m_animationMarcherBas.setSpriteSheet(m_texture);
 		m_animationMarcherBas.addFrame(sf::IntRect(32, 0, 32, 32));
 		m_animationMarcherBas.addFrame(sf::IntRect(64, 0, 32, 32));
@@ -53,13 +53,20 @@
 	}
 	
 	void Personnage::attaquer(Personnage p) {
-		p.perdreVie( Personnage::getDegat() );
+		//p.perdreVie( Personnage::getDegat() );
 	}
 
+	void Personnage::seFaireAttaquer(Personnage p) {
+		perdreVie(p.getDegat());
+	}
 	void Personnage::perdreVie(int x) {
 		if (m_vie - x > 0) {   m_vie = (m_vie - x); }   else   {  m_vie = 0;  }
 	}
 
+
+	bool Personnage::isDead() {
+		return (getVie() < 1);	
+	}
 
 	// - - - Getter - - -
 

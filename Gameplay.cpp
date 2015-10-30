@@ -2,13 +2,14 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <vector>
+#include "Personnage.h"
+#include "Zombie.h"
+#include <SFML/Graphics.hpp>
+#include "HUD.cpp"
 
 
 class Gameplay {
 public:
-
-
-
 
 	static void Gameplay::creerCurseur(sf::RenderWindow& window, int largeurCurseur) {
 		window.setMouseCursorVisible(false);
@@ -21,17 +22,27 @@ public:
 		window.draw(sprite);
 	}
 
-	void Gameplay::isOnEnnemie( sf::RenderWindow& window) {
+	bool Gameplay::isOnZombie( sf::RenderWindow& window, Joueur j ,Zombie z) {
 		sf::Vector2i curseur = sf::Mouse::getPosition(window);
+		bool res = false;
+	
 		
-		/**for (int i = 0; i < tab.size(); i++) {
-			if (tab[i].getX() >= curseur.x - 10 && tab[i].getX() <= curseur.x + 10) {
-				cout << "LEL" << endl;
-			}
+			if ((z.getX() >= curseur.x - 10 && z.getX() <= curseur.x + 10) 
+				&& z.getY() >= curseur.y - 10 && z.getY() <= curseur.y + 10)  {
+				res = true;
+				HUD::afficherInfoZombie(window, z);
+		
 
-		}*/
+		}
+		return res;
 	}
 
+
+	void Gameplay::tirer(Joueur j, Zombie z) {
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+			
+		}
+	}
 
 };
 

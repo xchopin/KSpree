@@ -29,6 +29,9 @@
     <ClCompile Include="Joueur.cpp">
       <Filter>MVC\Modèle\Personnage</Filter>
     </ClCompile>
+    <ClCompile Include="Zombie.cpp">
+      <Filter>MVC\Modèle\Personnage</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.hpp">
@@ -44,6 +47,9 @@
       <Filter>En-tête\Personnage</Filter>
     </ClInclude>
     <ClInclude Include="Joueur.h">
+      <Filter>En-tête\Personnage</Filter>
+    </ClInclude>
+    <ClInclude Include="Zombie.h">
       <Filter>En-tête\Personnage</Filter>
     </ClInclude>
   </ItemGroup>
