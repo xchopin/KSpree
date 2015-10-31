@@ -47,14 +47,20 @@ public:
 
 	}
 
-	static const vector<Zombie> genererZombies(){
+	static const vector<Zombie> genererZombies(int round){
 		vector<Zombie> tab;
 
-		for (int i = 0; i < 2; i++) {
-
+		for (int i = 0; i < 4; i++) {
+			int aleatoire = rand() % 100;
+			int x = (aleatoire + 50) * i;
+			int y = (aleatoire + 55) * i;
 			Zombie z;
 			z.chargerTexture("./assets/zombie.png");
-			z.setX(65 + 50 * i);
+			z.setX(y);
+			z.setY(x);
+			z.setDegat(z.getDegat() + round);
+			z.setVitesse(z.getVitesse() + (aleatoire / 20));
+		
 			tab.push_back(z);
 		}
 

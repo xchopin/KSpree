@@ -8,7 +8,7 @@
 class Joueur : public Personnage {
 public:
 	bool m_isKeyboardUsed;
-
+	int m_kill;
 	// Méthodes
 	Joueur(string n, int life, int v, int d); // Constructeur
 	void jouerAnimation(); // animer le joueur , méthode légérement différente pour prendre en compte le clavier ;)

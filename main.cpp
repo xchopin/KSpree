@@ -30,7 +30,7 @@ sf::RenderWindow fenetre(sf::VideoMode(dimensionFenetre.x, dimensionFenetre.y), 
 Zombie zombietest;
 #pragma endregion
 
-vector <Zombie> tab = moteur::genererZombies();
+vector <Zombie> tab_zombie;
 
 //Musique
 
@@ -45,8 +45,9 @@ int main(){
 	sfx_tir.openFromFile("./assets/sfx_tir.ogg");
 
 	// Paramètres de la fenêtre
-	
 	fenetre.setFramerateLimit(60);
+	int round = 0 ;
+
 
 	
 	while (fenetre.isOpen()) {
@@ -62,7 +63,11 @@ int main(){
 
 		if (event.type != sf::Event::LostFocus) {
 			sf::Time frameTime = temps.restart();
-
+			//Moteur
+			if (tab_zombie.size() < 1) {
+				round++;
+				tab_zombie = moteur::genererZombies(round);
+			}
 			// Animation du joueur
 			joueur.jouerAnimation();
 			joueur.clavier();
@@ -73,29 +78,31 @@ int main(){
 			fenetre.draw(moteur::genererCarte());
 			joueur.dessinerHUD(fenetre, horloge);
 			
-				for (int i = 0; i < tab.size(); i++) {
-					tab[i].chargerTexture("./assets/zombie.png");
-					tab[i].jouerAnimation();
-					tab[i].m_animatedSprite.setPosition(tab[i].getX(), tab[i].getY());
-					tab[i].updateAnimation(frameTime);
-					fenetre.draw(tab[i].getAnimatedSprite());
+				for (int i = 0; i < tab_zombie.size(); i++) {
+					tab_zombie[i].chargerTexture("./assets/zombie.png");
+					tab_zombie[i].jouerAnimation();
+					tab_zombie[i].m_animatedSprite.setPosition(tab_zombie[i].getX(), tab_zombie[i].getY());
+					tab_zombie[i].updateAnimation(frameTime);
+					fenetre.draw(tab_zombie[i].getAnimatedSprite());
 
-					if (!tab[i].poursuivre(joueur)) {
+					if (!tab_zombie[i].poursuivre(joueur)) {
 						if (horloge2.getElapsedTime().asSeconds() >= 1) {
 							cri_zombie.play();
 
-							joueur.seFaireAttaquer(tab[i]); // quand le joueur n'est pas poursuivi on l'attaque toutes les secondes
+							joueur.seFaireAttaquer(tab_zombie[i]); // quand le joueur n'est pas poursuivi on l'attaque toutes les secondes
 							horloge2.restart();
 						}
 					} // si le joueur n'est pas poursuivi ;)
-					if (control.isOnZombie(fenetre, joueur, tab[i])) {
+					if (control.isOnZombie(fenetre, joueur, tab_zombie[i])) {
 
 						if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 
 
-							tab[i].seFaireAttaquer(joueur);
-							if (tab[i].isDead()) {
-								tab.erase(tab.begin() + i);
+							tab_zombie[i].seFaireAttaquer(joueur);
+							if (tab_zombie[i].isDead()) {
+								joueur.m_kill++;
+								tab_zombie.erase(tab_zombie.begin() + i);
+								joueur.setVie(joueur.getVie() + 2);
 							}
 						}
 

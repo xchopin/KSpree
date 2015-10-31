@@ -2,8 +2,10 @@
 
 // Constructeur
 Joueur::Joueur(string n, int life, int v, int d) : Personnage(n,life,v,d) {
+	
 	Joueur::chargerTexture("./assets/player.png");
 	m_isKeyboardUsed = false;
+	m_kill = 0;
 }
 
 void Joueur::jouerAnimation() {
@@ -22,6 +24,7 @@ void Joueur::dessinerHUD(sf::RenderWindow& window, sf::Clock& temps) {
 	window.draw(boite);
 
 	// Texte
+	sf::Text kill;
 	sf::Text texteVie;
 	sf::Font font;
 	if (!font.loadFromFile("./assets/arial.ttf")) { std::cout << "Erreur de chargement de la police arial.ttf" << std::endl; }
@@ -32,6 +35,14 @@ void Joueur::dessinerHUD(sf::RenderWindow& window, sf::Clock& temps) {
 	texteVie.setString("Santé: ");
 	texteVie.setPosition(1, window.getSize().y - 55);
 	window.draw(texteVie);
+
+	kill.setFont(font);
+	kill.setCharacterSize(12);
+	kill.setColor(sf::Color::Red);
+	kill.setStyle(sf::Text::Bold);
+	kill.setString("KILLS: "+ to_string(Joueur::m_kill));
+	kill.setPosition(window.getSize().x/2 - 30,  5);
+	window.draw(kill);
 
 	// La vie
 	sf::RectangleShape vie(sf::Vector2f( Joueur::getVie() * 2, 14));
