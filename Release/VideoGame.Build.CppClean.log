@@ -3,14 +3,13 @@ c:\users\xavier\documents\visual studio 2015\projects\videogame\release\zombie.o
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\tilemap.obj
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\joueur.obj
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\moteur.obj
-c:\users\xavier\documents\visual studio 2015\projects\videogame\release\main.obj
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\gameplay.obj
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\personnage.obj
+c:\users\xavier\documents\visual studio 2015\projects\videogame\release\launcher.obj
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\hud.obj
-c:\users\xavier\documents\visual studio 2015\projects\videogame\release\balle.obj
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\animation.obj
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\animatedsprite.obj
-c:\users\xavier\documents\visual studio 2015\projects\videogame\release\videogame.exe
+c:\users\xavier\documents\visual studio 2015\projects\videogame\release\main.obj
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\videogame.ipdb
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\videogame.iobj
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\videogame.pdb
@@ -19,4 +18,7 @@ c:\users\xavier\documents\visual studio 2015\projects\videogame\release\videogam
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\videogame.tlog\cl.write.1.tlog
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\videogame.tlog\link.command.1.tlog
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\videogame.tlog\link.read.1.tlog
+c:\users\xavier\documents\visual studio 2015\projects\videogame\release\videogame.tlog\link.read.2.tlog
+c:\users\xavier\documents\visual studio 2015\projects\videogame\release\videogame.tlog\link.read.3.tlog
+c:\users\xavier\documents\visual studio 2015\projects\videogame\release\videogame.tlog\link.read.5.tlog
 c:\users\xavier\documents\visual studio 2015\projects\videogame\release\videogame.tlog\link.write.1.tlog

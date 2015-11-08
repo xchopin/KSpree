@@ -17,20 +17,20 @@
     <ClCompile Include="moteur.cpp">
       <Filter>MVC\Controller</Filter>
     </ClCompile>
-    <ClCompile Include="Balle.cpp">
-      <Filter>MVC\Modèle</Filter>
-    </ClCompile>
     <ClCompile Include="HUD.cpp">
       <Filter>MVC\Vue</Filter>
     </ClCompile>
-    <ClCompile Include="Personnage.cpp">
-      <Filter>MVC\Modèle\Personnage</Filter>
-    </ClCompile>
     <ClCompile Include="Joueur.cpp">
-      <Filter>MVC\Modèle\Personnage</Filter>
+      <Filter>MVC\Modèle</Filter>
+    </ClCompile>
+    <ClCompile Include="Personnage.cpp">
+      <Filter>MVC\Modèle</Filter>
     </ClCompile>
     <ClCompile Include="Zombie.cpp">
-      <Filter>MVC\Modèle\Personnage</Filter>
+      <Filter>MVC\Modèle</Filter>
+    </ClCompile>
+    <ClCompile Include="Launcher.cpp">
+      <Filter>MVC\Vue</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -40,9 +40,6 @@
     <ClInclude Include="Animation.hpp">
       <Filter>En-tête</Filter>
     </ClInclude>
-    <ClInclude Include="Gameplay.h">
-      <Filter>En-tête</Filter>
-    </ClInclude>
     <ClInclude Include="Personnage.h">
       <Filter>En-tête\Personnage</Filter>
     </ClInclude>
@@ -50,6 +47,9 @@
       <Filter>En-tête\Personnage</Filter>
     </ClInclude>
     <ClInclude Include="Zombie.h">
+      <Filter>En-tête\Personnage</Filter>
+    </ClInclude>
+    <ClInclude Include="Launcher.h">
       <Filter>En-tête\Personnage</Filter>
     </ClInclude>
   </ItemGroup>
@@ -71,9 +71,6 @@
     </Filter>
     <Filter Include="En-tête\Personnage">
       <UniqueIdentifier>{b140bbae-3445-49e1-b8c3-41bf034208dd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="MVC\Modèle\Personnage">
-      <UniqueIdentifier>{e9661771-07b3-437f-9332-c8f315b945d9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

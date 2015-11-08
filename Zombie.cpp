@@ -11,8 +11,7 @@ Zombie::Zombie(): Personnage("Zombie", 20, 1, 10) {
 }
 
 
-Zombie::~Zombie()
-{
+Zombie::~Zombie(){
 }
 
 void Zombie::jouerAnimation() {
@@ -61,8 +60,14 @@ bool Zombie::poursuivre(Joueur j) {
 
 	// Y
 	else if (j.getY()+24< Zombie::getY()) {
-		Zombie::setY(Zombie::getY() - Zombie::getVitesse());
 	
+		Zombie::setY(Zombie::getY() - Zombie::getVitesse());
+		m_animActu.effacerFrame();
+		m_animActu.addFrame(sf::IntRect(32, 96, 32, 32));
+		m_animActu.addFrame(sf::IntRect(64, 96, 32, 32));
+		m_animActu.addFrame(sf::IntRect(32, 96, 32, 32));
+		m_animActu.addFrame(sf::IntRect(0, 96, 32, 32));
+
 	}
 
 	else if (j.getY()-24 >  Zombie::getY()) {

@@ -1,4 +1,20 @@
-﻿  main.cpp
+﻿  HUD.cpp
+HUD.cpp(23): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+HUD.cpp(24): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+HUD.cpp(39): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+HUD.cpp(47): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+HUD.cpp(57): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+HUD.cpp(61): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+HUD.cpp(62): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+HUD.cpp(72): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+HUD.cpp(94): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+HUD.cpp(107): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+HUD.cpp(111): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+HUD.cpp(123): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+HUD.cpp(125): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+HUD.cpp(126): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+HUD.cpp(132): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+  main.cpp
 c:\users\xavier\documents\visual studio 2015\projects\videogame\TileMap.cpp(1): warning C4067: jetons inattendus après la directive du préprocesseur - saut de ligne attendu
 c:\users\xavier\documents\visual studio 2015\projects\videogame\TileMap.cpp(30): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
 c:\users\xavier\documents\visual studio 2015\projects\videogame\TileMap.cpp(31): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
@@ -8,16 +24,26 @@ c:\users\xavier\documents\visual studio 2015\projects\videogame\TileMap.cpp(36):
 c:\users\xavier\documents\visual studio 2015\projects\videogame\TileMap.cpp(37): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
 c:\users\xavier\documents\visual studio 2015\projects\videogame\TileMap.cpp(38): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
 c:\users\xavier\documents\visual studio 2015\projects\videogame\TileMap.cpp(39): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
-c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(15): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
-c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(19): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
-c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(31): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
-c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(33): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(34): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
-main.cpp(81): warning C4018: '<' : incompatibilité signed/unsigned
-main.cpp(84): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(23): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(24): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(39): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(47): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(57): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(61): warning C4244: 'argument' : conversion de 'double' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(62): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(72): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(94): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(107): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(111): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(123): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(125): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(126): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\HUD.cpp(132): warning C4244: 'argument' : conversion de 'unsigned int' en 'float', perte possible de données
+c:\users\xavier\documents\visual studio 2015\projects\videogame\moteur.cpp(182): warning C4018: '<' : incompatibilité signed/unsigned
+c:\users\xavier\documents\visual studio 2015\projects\videogame\moteur.cpp(185): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
   Génération de code en cours
-  2 of 445 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+  1 of 422 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    6 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   VideoGame.vcxproj -> C:\Users\Xavier\Documents\Visual Studio 2015\Projects\VideoGame\Release\VideoGame.exe

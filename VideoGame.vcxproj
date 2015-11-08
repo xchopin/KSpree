@@ -160,8 +160,8 @@
   <ItemGroup>
     <ClCompile Include="AnimatedSprite.cpp" />
     <ClCompile Include="Animation.cpp" />
-    <ClCompile Include="Balle.cpp" />
     <ClCompile Include="HUD.cpp" />
+    <ClCompile Include="Launcher.cpp" />
     <ClCompile Include="Personnage.cpp" />
     <ClCompile Include="Gameplay.cpp" />
     <ClCompile Include="main.cpp" />
@@ -173,8 +173,8 @@
   <ItemGroup>
     <ClInclude Include="AnimatedSprite.hpp" />
     <ClInclude Include="Animation.hpp" />
-    <ClInclude Include="Gameplay.h" />
     <ClInclude Include="Joueur.h" />
+    <ClInclude Include="Launcher.h" />
     <ClInclude Include="Personnage.h" />
     <ClInclude Include="Zombie.h" />
   </ItemGroup>

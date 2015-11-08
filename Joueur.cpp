@@ -15,66 +15,9 @@ void Joueur::jouerAnimation() {
 }
 
 
-void Joueur::dessinerHUD(sf::RenderWindow& window, sf::Clock& temps) {
-
-	// Boite
-	sf::RectangleShape boite(sf::Vector2f(window.getSize().x, 95));
-	boite.setPosition(0, window.getSize().y - 65);
-	boite.setFillColor(sf::Color(0, 0, 0));
-	window.draw(boite);
-
-	// Texte
-	sf::Text kill;
-	sf::Text texteVie;
-	sf::Font font;
-	if (!font.loadFromFile("./assets/arial.ttf")) { std::cout << "Erreur de chargement de la police arial.ttf" << std::endl; }
-	texteVie.setFont(font);
-	texteVie.setCharacterSize(16);
-	texteVie.setColor(sf::Color::White);
-	texteVie.setStyle(sf::Text::Bold);
-	texteVie.setString("Santé: ");
-	texteVie.setPosition(1, window.getSize().y - 55);
-	window.draw(texteVie);
-
-	kill.setFont(font);
-	kill.setCharacterSize(12);
-	kill.setColor(sf::Color::Red);
-	kill.setStyle(sf::Text::Bold);
-	kill.setString("KILLS: "+ to_string(Joueur::m_kill));
-	kill.setPosition(window.getSize().x/2 - 30,  5);
-	window.draw(kill);
-
-	// La vie
-	sf::RectangleShape vie(sf::Vector2f( Joueur::getVie() * 2, 14));
-	vie.setPosition(1, window.getSize().y - 25);
-	vie.setFillColor(sf::Color(255, 0, 0));
-	window.draw(vie);
-
-
-	// Le temps
-	sf::Text chrono;
-	chrono.setFont(font);
-	chrono.setCharacterSize(15);
-	chrono.setColor(sf::Color::White);
-	chrono.setStyle(sf::Text::Bold);
-	int time = int(temps.getElapsedTime().asSeconds());
-	int minutes = time / 60;
-	int secondes = time;
-	if (secondes >= 60) {
-		int retirer = 60 * minutes;
-		secondes = time - retirer;
-	}
-
-
-	chrono.setString(to_string(minutes) + " : " + to_string(secondes));
-	chrono.setPosition(window.getSize().x / 2, window.getSize().y - 30);
-	window.draw(chrono);
-
-
-}
 
 void Joueur::clavier() {
-
+	sf::sleep(sf::milliseconds(1));
 	//  Axe X 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
 
@@ -96,7 +39,7 @@ void Joueur::clavier() {
 		//  Axe Y
 
 	} else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-		if ((Joueur::getY() + Joueur::getVitesse()) <= 590) {
+		if ((Joueur::getY() + Joueur::getVitesse()) <= 500) {
 			Joueur::setY(Joueur::getY() + Joueur::getVitesse());
 			m_animationActuel = &m_animationMarcherBas;
 			m_isKeyboardUsed = true;
