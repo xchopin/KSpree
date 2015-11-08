@@ -28,16 +28,10 @@ public:
 		// Texte
 		sf::Text kill;
 		sf::Text round;
+		sf::Text munition;
 		sf::Text texteVie;
 		sf::Font font;
 		if (!font.loadFromFile("./assets/arial.ttf")) { std::cout << "Erreur de chargement de la police arial.ttf" << std::endl; }
-		texteVie.setFont(font);
-		texteVie.setCharacterSize(16);
-		texteVie.setColor(sf::Color::White);
-		texteVie.setStyle(sf::Text::Bold);
-		texteVie.setString("Santé: ");
-		texteVie.setPosition(60, window.getSize().y - 68);
-		window.draw(texteVie);
 
 		kill.setFont(font);
 		kill.setCharacterSize(12);
@@ -57,9 +51,19 @@ public:
 		round.setPosition(window.getSize().x / 2 - 30, window.getSize().y - 60);
 		window.draw(round);
 
+
+		// Munition
+		munition.setFont(font);
+		munition.setCharacterSize(12);
+		munition.setColor(sf::Color::White);
+		munition.setStyle(sf::Text::Bold);
+		munition.setString("P226: " + to_string(j.getMunition()) + " / UNL");
+		munition.setPosition(50, window.getSize().y - 35);
+		window.draw(munition);
+
 		// La vie
 		sf::RectangleShape vie(sf::Vector2f(j.getVie() * 1.5, 7));
-		vie.setPosition(32, window.getSize().y - 35);
+		vie.setPosition(32, window.getSize().y - 50);
 		vie.setFillColor(sf::Color(255, 0, 0));
 		window.draw(vie);
 
@@ -69,7 +73,7 @@ public:
 		sf::Texture texture_joueur;
 		texture_joueur.loadFromFile("./assets/player_face.png");
 		sf::Sprite sprite_joueur(texture_joueur);
-		sprite_joueur.setPosition(7, window.getSize().y - 50);
+		sprite_joueur.setPosition(7, window.getSize().y - 65);
 		
 		window.draw(sprite_joueur);
 

@@ -6,6 +6,7 @@ Joueur::Joueur(string n, int life, int v, int d) : Personnage(n,life,v,d) {
 	Joueur::chargerTexture("./assets/player.png");
 	m_isKeyboardUsed = false;
 	m_kill = 0;
+	m_munition = 7;
 }
 
 void Joueur::jouerAnimation() {
@@ -15,6 +16,23 @@ void Joueur::jouerAnimation() {
 }
 
 
+// Getter - Setter
+int Joueur::getMunition() {
+	return m_munition;
+}
+
+void Joueur::setMunition(int x) {
+	Joueur::m_munition = x;
+}
+
+void Joueur::rechargerMunition() {
+	if (Joueur::getMunition() < 7) {
+	
+			Joueur::setMunition(7);
+			
+		
+	}
+}
 
 void Joueur::clavier() {
 	sf::sleep(sf::milliseconds(1));
@@ -55,7 +73,10 @@ void Joueur::clavier() {
 			m_isKeyboardUsed = true;
 
 		}
-	}
+	} 
+	
+
+
 
 
 }

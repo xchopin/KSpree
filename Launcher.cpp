@@ -12,21 +12,18 @@ public:
 		window.draw(bg);
 
 		if (selectionnerChoix(window, 630, 246, 775, 286)) {
-			sf::RectangleShape souligner(sf::Vector2f(123, 5));
-			souligner.setPosition(650, 296);
-			souligner.setFillColor(sf::Color::White);
-			window.draw(souligner);
+			fond_bg.loadFromFile("./assets/background1.png");
+			bg.setTexture(fond_bg);
+			window.draw(bg);
 
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
 				return 1;
 			}
 
-		}
-		else if (selectionnerChoix(window, 687, 345, 775, 385)) {
-			sf::RectangleShape souligner(sf::Vector2f(90, 5));
-			souligner.setPosition(687, 395);
-			souligner.setFillColor(sf::Color::White);
-			window.draw(souligner);
+		} else if (selectionnerChoix(window, 687, 345, 775, 385)) {
+			fond_bg.loadFromFile("./assets/background2.png");
+			bg.setTexture(fond_bg);
+			window.draw(bg);
 			if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
 				window.close();
 				return 0; // obligé de mettre un return ^^

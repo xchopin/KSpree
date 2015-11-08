@@ -68,9 +68,9 @@ public:
 		vector<Zombie> tab;
 
 		for (int i = 0; i < nb; i++) {
-			int aleatoire = rand() % 100;
-			int x = (aleatoire + 50) * i;
-			int y = (aleatoire + 55) * i;
+			int aleatoire =( rand() % 100) ;
+			int x = (aleatoire + 50) * 3 ;
+			int y = (aleatoire + 55) *4 ;
 			Zombie z;
 			z.chargerTexture("./assets/zombie.png");
 			z.setX(y);
@@ -88,7 +88,7 @@ public:
 	static const void start() {
 		int choix;
 		sf::Vector2i dimensionFenetre(800, 600);
-		sf::RenderWindow fenetre(sf::VideoMode(dimensionFenetre.x, dimensionFenetre.y), "KSpree v0.5f");
+		sf::RenderWindow fenetre(sf::VideoMode(dimensionFenetre.x, dimensionFenetre.y), "KSpree v0.5h");
 		fenetre.setFramerateLimit(60);
 		sf::Music main_theme;
 		main_theme.openFromFile("./assets/main_theme.ogg");
@@ -122,8 +122,10 @@ public:
 	static const void run(sf::RenderWindow& fenetre) {
 	
 #pragma region variables
+	
 		// Personnages
-		Joueur joueur("Xavier", 100, 2, 5);
+		Joueur joueur("Xavier", 100, 2, 30);
+	
 		vector <Zombie> tab_zombie;
 		//Génerer map manuellement, pas très utile pour cette version du jeu
 		//TileMap carte;
@@ -136,17 +138,21 @@ public:
 
 		sf::Clock temps;
 		sf::Clock horloge;
+		sf::Clock horloge_rechargement;
 		sf::Clock horloge2;
-		
+		bool hasShot = false;
+		bool hasReload = false;
 		int round = 0;
 
 		// SFX
 		sf::Music cri_zombie;
 		sf::Music sfx_tir;
+		sf::Music sfx_reload;
 		cri_zombie.openFromFile("./assets/fuck.ogg");
 		sfx_tir.openFromFile("./assets/sfx_tir.ogg");
+		sfx_reload.openFromFile("./assets/sfx_reload.ogg");
 		sfx_tir.setVolume(50);
-
+		sfx_reload.setVolume(50);
 #pragma endregion
 		while (fenetre.isOpen()) {
 			
@@ -178,7 +184,6 @@ public:
 				fenetre.draw(sprite_carte);
 
 
-
 				for (int i = 0; i < tab_zombie.size(); i++) {
 					tab_zombie[i].chargerTexture("./assets/zombie.png");
 					tab_zombie[i].jouerAnimation();
@@ -190,32 +195,64 @@ public:
 							cri_zombie.play();
 							joueur.seFaireAttaquer(tab_zombie[i]); // quand le joueur n'est pas poursuivi on l'attaque toutes les secondes
 							horloge2.restart();
-							sf::sleep(sf::milliseconds(5));
+							
 						}
-					} // si le joueur n'est pas poursuivi ;)
+					} 
 				
 					if (Gameplay::isOnZombie(fenetre, joueur, tab_zombie[i])) {
 						HUD::afficherInfoZombie(fenetre,tab_zombie[i]);
-						if ((event.type = sf::Event::MouseButtonReleased) && (event.key.code == sf::Mouse::Left)) {
-							tab_zombie[i].seFaireAttaquer(joueur);
-							if (tab_zombie[i].isDead()) {
-								joueur.m_kill++;
-								tab_zombie.erase(tab_zombie.begin() + i);
-								joueur.setVie(joueur.getVie() + 2);
-							
+				
+						if (!(sfx_tir.getStatus() == sf::Music::Status::Playing)) {
+							if ((sf::Mouse::isButtonPressed(sf::Mouse::Button::Left ) && (joueur.getMunition() > 0))) { hasShot = true; }
+
+							while ((hasShot == true)) {
+								sfx_tir.play();
+								joueur.m_munition--;
+								tab_zombie[i].seFaireAttaquer(joueur);
+								hasShot = false;
 							}
+						}
+
+						if (tab_zombie[i].isDead()) {
+							joueur.m_kill++;
+							tab_zombie.erase(tab_zombie.begin() + i);
+							joueur.setVie(joueur.getVie() + 2);	
+							sf::sleep(sf::milliseconds(5));
 						}
 					}
 				}
-
+				
 			
 				fenetre.draw(joueur.getAnimatedSprite());
 				HUD::creerCurseur(fenetre, 16);
 				HUD::dessinerHUD(fenetre, horloge, joueur,round);
-				if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
-					sfx_tir.play();
-				}
+				//Si la le tir n'est pas joué on se permet de tirer
+				if (!(sfx_tir.getStatus() == sf::Music::Status::Playing)){
+					if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left) && (joueur.getMunition() > 0 )) {   hasShot = true;}
+					while ((hasShot == true)) {
+						sfx_tir.play();
+						joueur.m_munition--;
+						hasShot = false;
+						
+					}
 				
+				}
+
+
+
+				// Rechargement
+				if (sf::Keyboard::isKeyPressed(sf::Keyboard::R)) {
+					hasReload = true;
+					horloge_rechargement.restart();
+					sfx_reload.play();
+				}
+
+				if ((hasReload == true) && (horloge_rechargement.getElapsedTime().asSeconds() > 3)) {
+					joueur.rechargerMunition();
+					horloge_rechargement.restart();
+					hasReload = false;
+				}
+
 				fenetre.display();
 			}
 		}
